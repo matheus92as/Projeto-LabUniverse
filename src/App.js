@@ -1,35 +1,43 @@
 import React from 'react';
 import styled from 'styled-components'
-import Header from './Components/Header'
-
-import Carrinho from './Components/Carrinho'
-import Filtros from './Components/Filtros';
-import Cards from './Components/cards'
-
-// import {Carrinho} from './Components/Carrinho'
-// import Filtros from './Components/filtro'
-// import Cards from './Components/cards'
-
+import Header from './components/Header'
+import Carrinho from './components/Carrinho'
+import Filtros from './components/Filtros'
+import Cards from './components/cards'
+import OrdenacaoPreco from './components/OrdenacaoPreco'
 import card1 from './img_cards/Card1.png'
 import estampaCard1 from './img_cards/Estampa_Card1.png'
 import card2 from './img_cards/Card2.png'
 import estampaCard2 from './img_cards/Estampa_Card2.png'
 import card3 from './img_cards/Card3.png'
 import estampaCard3 from './img_cards/Estampa_Card3.png'
-import OrdenacaoPreco from './Components/OrdenacaoPreco';
+import card4 from './img_cards/Card4.png'
+import estampaCard4 from './img_cards/Estampa_Card4.png'
+import card5 from './img_cards/Card5.png'
+import estampaCard5 from './img_cards/Estampa_Card5.png'
+import card6 from './img_cards/Card6.png'
+import estampaCard6 from './img_cards/Estampa_Card6.png'
+import card7 from './img_cards/Card7.png'
+import estampaCard7 from './img_cards/Estampa_Card7.png'
+import card8 from './img_cards/Card8.png'
+import estampaCard8 from './img_cards/Estampa_Card8.png'
 
 
 const MainContainer = styled.div`
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 `
+
 const Main =styled.div`
   width:100%;
+  min-height: 75vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
-  background-image: url(https://wallpaperaccess.com/full/1219623.jpg);
+  background-color:#1e1e1e;
+  /* background-image: url(https://wallpaperaccess.com/full/1219623.jpg); */
 `
 
 const CardContainer = styled.div`
@@ -40,7 +48,14 @@ const CardContainer = styled.div`
     justify-content: center;
 `
 
-
+const Footer = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-image:url(https://thumbs.dreamstime.com/b/cen%C3%A1rio-estrelado-de-espa%C3%A7o-wallpaper-c%C3%B3smico-profundo-amplo-cosmos-com-estrelas-brilhantes-belo-universo-constela%C3%A7%C3%A3o-textura-218573124.jpg);
+  height: 100px;
+`
 
 class App extends React.Component {
   state = {
@@ -49,112 +64,64 @@ class App extends React.Component {
         id:1,
         fotoProduto: card1,
         fotoEstampa: estampaCard1,
-
         descricao:'Astronauta Triangulo',
         preco:80,
-
-        descricao: "Camiseta Branca Astronauta - Masculina",
-        preco: "100",
-
       },
       {
         id:2,
         fotoProduto: card2,
         fotoEstampa: estampaCard2,
-
         descricao:'Astronauta Balão',
         preco:81,
-
-        descricao: "Camiseta Branca Astronauta - Feminina",
-        preco: "81",
-
       },
       {
         id:3,
         fotoProduto: card3,
         fotoEstampa: estampaCard3,
-
         descricao:'Astronauta Azul',
         preco:82,
-
-        descricao: "Camiseta Preta Astronauta - Feminina",
-        preco: "90",
-
       },
       {
         id:4,
-        fotoProduto: card3,
-        fotoEstampa: estampaCard3,
-
-        descricao:'Astronauta Azul',
+        fotoProduto: card4,
+        fotoEstampa: estampaCard4,
+        descricao:'Astronauta Portal',
         preco:83,
-
-        descricao: "Camiseta Preta Astronauta - Feminina",
-        preco: "83",
-
       },
       {
         id:5,
-        fotoProduto: card3,
-        fotoEstampa: estampaCard3,
-
-        descricao:'Astronauta Azul',
+        fotoProduto: card5,
+        fotoEstampa: estampaCard5,
+        descricao:'Planeta Fatiado',
         preco:84,
-
-        descricao: "Camiseta Preta Astronauta - Feminina",
-        preco: "84",
-
       },
       {
         id:6,
-        fotoProduto: card3,
-        fotoEstampa: estampaCard3,
-
-        descricao:'Astronauta Azul',
+        fotoProduto: card6,
+        fotoEstampa: estampaCard6,
+        descricao:'Astronauta Balanço',
         preco:85,
-
-        descricao: "Camiseta Preta Astronauta - Feminina",
-        preco: "85",
-
       },
       {
         id:7,
-        fotoProduto: card3,
-        fotoEstampa: estampaCard3,
-
-        descricao:'Astronauta Azul',
+        fotoProduto: card7,
+        fotoEstampa: estampaCard7,
+        descricao:'Gatonauta',
         preco: 86,
-
-        descricao: "Camiseta Preta Astronauta - Feminina",
-        preco: "86",
-
       },
       {
         id:8,
-        fotoProduto: card3,
-        fotoEstampa: estampaCard3,
-
-        descricao:'Astronauta Azul',
+        fotoProduto: card8,
+        fotoEstampa: estampaCard8,
+        descricao:'Astronauta Skate',
         preco: 87,
       },
     ],
-    listaDeCompras: [
-      {
-        id:8,
-        descricao:'Astronauta Azul',
-        preco: 87,
-        quantia: 1,
-
-        descricao: "Camiseta Preta Astronauta - Feminina",
-        preco: "87",
-
-      },
-    ],
+    listaDeCompras: [],
     precoMin: "",
     precoMax: "",
     inputPesquisar: "",
     ordenacaoPreco: "",
-
     carrinhoHeader: false,
   }
 
@@ -162,9 +129,6 @@ class App extends React.Component {
     this.setState({carrinhoHeader: !this.state.carrinhoHeader})
     // console.log(this.state.carrinhoHeader)
   }
-
-  // };
-
 
   updatePrecoMin = (dig) => {
     this.setState({ precoMin: dig.target.value });
@@ -218,7 +182,6 @@ class App extends React.Component {
     this.setState({ inputPesquisar: dig.target.value });
   };
 
-
   updateOrdenacaoPreco = (event) => {
     this.setState({ ordenacaoPreco: event.target.value});
   }
@@ -248,7 +211,6 @@ class App extends React.Component {
       .map((card) => {
         return (
           <Cards
-
           id = {card.id}
           fotoProduto = {card.fotoProduto}
           fotoEstampa ={card.fotoEstampa}
@@ -259,23 +221,6 @@ class App extends React.Component {
       )
     })
 
-    // return (
-      // <MainContainer>
-      //   {/* <Header 
-      //     onClickCarrinho={this.onClickCarrinho}
-      //     carrinhoHeader={this.state.carrinhoHeader} */}
-      //   {/* />
-
-      //       fotoProduto={card.fotoProduto}
-      //       fotoEstampa={card.fotoEstampa}
-      //       descricao={card.descricao}
-      //       preco={card.preco}
-      //     /> */}
-      //   );
-      // });
-
-      // console.log(this.state.ordenacaoPreco)
-
     return (
       
       <MainContainer>
@@ -284,12 +229,11 @@ class App extends React.Component {
           updatePesquisar={this.updatePesquisar}
           onClickCarrinho={this.onClickCarrinho}
           carrinhoHeader={this.state.carrinhoHeader}
-        />
+          />
         <OrdenacaoPreco 
-          ordenacaoPreco={this.state.ordenacaoPreco}
-          updateOrdenacaoPreco={this.updateOrdenacaoPreco}
-        />       
-
+            ordenacaoPreco={this.state.ordenacaoPreco}
+            updateOrdenacaoPreco={this.updateOrdenacaoPreco}
+        />    
         <Main>
           <Filtros
             precoMin={this.state.precoMin}
@@ -306,13 +250,10 @@ class App extends React.Component {
             removeItem={this.removeItem}
             carrinhoHeader={this.state.carrinhoHeader}
           />
-        </Main>  
-        <CardContainer>{listaFiltrada}</CardContainer>
+        </Main> 
+        <Footer>
+        </Footer> 
       </MainContainer> 
-
-    //     </Main>
-    // </MainContainer>
-
     )
   }
 }

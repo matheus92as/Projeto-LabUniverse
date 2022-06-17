@@ -5,6 +5,7 @@ const CardBox = styled.div`
     background-color: #444444;
     color: white;
     width: 200px ;
+    height: 450px;
     display: flex;
     flex-direction: column;
     box-shadow: 5px 5px 10px black;
@@ -19,6 +20,11 @@ const CardBox = styled.div`
         margin-top: 0;
         padding: 5px;
         border-radius: 5px;
+    }
+    :hover{
+        .descri{
+            color:#9F40F8;
+        }
     }
 `
 const ImagensCard = styled.div`
@@ -50,10 +56,12 @@ class Cards extends React.Component {
                     <img className='img1' src={this.props.fotoProduto} alt={'Camiseta'}></img>
                 </ImagensCard>
                 <div>
-                    <p>{this.props.descricao} </p>
+                    <p className='descri'>{this.props.descricao} </p>
                     <p>R$ {this.props.preco}</p>
                 </div>
-                <button onClick={() => this.props.onAddProductToCart(this.props.produto.id)} >Adicionar ao carrinho</button>
+                <button 
+                    onClick={() => this.props.adicionarItem(this.props.id)}
+                >Adicionar ao carrinho</button>
                
             </CardBox>
         )

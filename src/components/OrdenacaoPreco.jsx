@@ -3,33 +3,52 @@ import styled from "styled-components";
 
 const MainContainer = styled.div`
   display: flex;
+  justify-content: center;
   width: 100%;
+  height: 30px;
   background-color: #1e1e1e;
-  justify-content: flex-end;
   align-items: center;
   color: white;
-  padding: 15px 100px 0 0;
-
+  padding-top: 25px;
   label{
     padding-right: 8px;
   }
-  
+`
+const SecondContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width:1300px;
+`
+
+const Filtro = styled.div`
+   margin: 0 25px;
+`
+const Ordenacao = styled.div`
+   margin: 0 60px;
 `
 
 class OrdenacaoPreco extends React.Component {
   render() {
     return (
       <MainContainer>
-        <label htmlFor="sort">Ordenar por</label>
-        <select
-          name="sort"
-          value={this.props.ordenacaoPreco}
-          onChange={this.props.updateOrdenacaoPreco}
-        >
-          <option value="#">Selecionar</option>
-          <option value="precoMenor">Menor preço</option>
-          <option value="precoMaior">Maior preço</option>
-        </select>
+        <SecondContainer>
+          <Filtro>
+            <h3>Filtros</h3>
+          </Filtro>
+          <Ordenacao>
+          <label htmlFor="sort">Ordenar por</label>
+          <select
+            name="sort"
+            value={this.props.ordenacaoPreco}
+            onChange={this.props.updateOrdenacaoPreco}
+          >
+            <option value="#">Selecionar</option>
+            <option value="precoMenor">Menor preço</option>
+            <option value="precoMaior">Maior preço</option>
+          </select>
+          </Ordenacao>
+        </SecondContainer>
       </MainContainer>
     );
   }
