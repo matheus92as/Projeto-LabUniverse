@@ -1,5 +1,12 @@
 ### Projeto LabUniverse
 
+Este projeto é mais simples, com apenas uma pagina, porém foca em funcionalidades basicas de um ecomerce, como os filtros de busca, adicição e remoção de itens no carrinho e é claro, a estética de uma pagina de vendas de produtos estilizados, no caso fazendo referência a pagina da Nerd Universe.
+
+Realizei este trabalho pelo bootcamp da Labenu junto dos meus colegas:
+
+[Matheus Moura](https://github.com/Mouramattheus)  
+[Renan Martinez](https://github.com/Renan-Ma)
+
 ### O que funciona
 - Card de produto tem animações ao passar o mouse neles, o botão de adicionar item faz acrecenta o produto no carrinho de compras, o carrinho de compras fica oculto mas surge se o icone de carrinho no header for clicado, dentro do carrinho podemos ver os itens selecionados, a quantia de cada um e o valor total de compra, também é possivel remover os itens do carrinho e assim o valor total é recalculado, os filtros de busca por valor, ou de pesquisa de busca estão todos funcionando, retornando os cards dos itens correspondentes.
 
