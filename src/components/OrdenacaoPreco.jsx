@@ -1,32 +1,10 @@
 import React from "react";
-import styled from "styled-components";
-
-const MainContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  height: 30px;
-  background-color: #1e1e1e;
-  align-items: center;
-  color: white;
-  padding-top: 25px;
-  label{
-    padding-right: 8px;
-  }
-`
-const SecondContainer = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width:1300px;
-`
-
-const Filtro = styled.div`
-   margin: 0 25px;
-`
-const Ordenacao = styled.div`
-   margin: 0 60px;
-`
+import {
+  MainContainer,
+  SecondContainer,
+  Filtro,
+  Ordenacao,
+} from "../styles/orderStyle";
 
 class OrdenacaoPreco extends React.Component {
   render() {
@@ -35,18 +13,40 @@ class OrdenacaoPreco extends React.Component {
         <SecondContainer>
           <Filtro>
             <h3>Filtros</h3>
+            <div class="input-group">
+              <input
+                type="number"
+                value={this.props.precoMin}
+                onChange={this.props.updatePrecoMin}
+                autocomplete="off"
+                required
+                class="input"
+              />
+              <label class="user-label">Valor Min</label>
+            </div>
+            <div class="input-group">
+              <input
+                type="number"
+                value={this.props.precoMax}
+                onChange={this.props.updatePrecoMax}
+                autocomplete="off"
+                class="input"
+                required
+              />
+              <label class="user-label">Valor Máx</label>
+            </div>
           </Filtro>
           <Ordenacao>
-          <label htmlFor="sort">Ordenar por</label>
-          <select
-            name="sort"
-            value={this.props.ordenacaoPreco}
-            onChange={this.props.updateOrdenacaoPreco}
-          >
-            <option value="#">Selecionar</option>
-            <option value="precoMenor">Menor preço</option>
-            <option value="precoMaior">Maior preço</option>
-          </select>
+            <label htmlFor="sort">Ordenar por :</label>
+            <select
+              name="sort"
+              value={this.props.ordenacaoPreco}
+              onChange={this.props.updateOrdenacaoPreco}
+            >
+              <option value="#">Selecionar</option>
+              <option value="precoMenor">Menor preço</option>
+              <option value="precoMaior">Maior preço</option>
+            </select>
           </Ordenacao>
         </SecondContainer>
       </MainContainer>

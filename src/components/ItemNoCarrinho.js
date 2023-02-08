@@ -7,8 +7,18 @@ const ContainerItensCarrinho = styled.div`
     align-items: center;
     justify-items: center;
     margin: 10px 0;
+    height: 25px;
+    text-align: center;
+    overflow: hidden;
     p{
-        margin: 0 5px;
+        margin:5px 0;
+    }
+    button{
+        border: none;
+        border-radius: 25px;
+        margin-left: 5px;
+        padding:2px 5px;
+        cursor: pointer;
     }
 `
 
@@ -22,7 +32,7 @@ class ItensCarrinho extends React.Component {
                 <p>{this.props.item.descricao} </p>
                 <button
                     onClick={() => this.props.removeItem(this.props.item.id)}
-                >Remover</button>
+                >X</button>
             </ContainerItensCarrinho>
         )
     }
