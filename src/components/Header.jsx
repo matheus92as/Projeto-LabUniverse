@@ -12,26 +12,26 @@ class Header extends React.Component {
         <H.SecondContainer>
           <H.Pesquisar>
             <img src={lupa} alt="pesquisar" />
-            <div class="wave-group">
+            <div className="wave-group">
               <input
                 type="text"
-                class="input"
+                className="input"
                 placeholder=""
                 required
                 value={this.props.inputPesquisar}
                 onChange={this.props.updatePesquisar}
               />
-              <span class="bar"></span>
-              <label class="label">
-                <span class="label-char">P</span>
-                <span class="label-char">e</span>
-                <span class="label-char">s</span>
-                <span class="label-char">q</span>
-                <span class="label-char">u</span>
-                <span class="label-char">i</span>
-                <span class="label-char">s</span>
-                <span class="label-char">a</span>
-                <span class="label-char">r</span>
+              <span className="bar"></span>
+              <label className="label">
+                <span className="label-char">P</span>
+                <span className="label-char">e</span>
+                <span className="label-char">s</span>
+                <span className="label-char">q</span>
+                <span className="label-char">u</span>
+                <span className="label-char">i</span>
+                <span className="label-char">s</span>
+                <span className="label-char">a</span>
+                <span className="label-char">r</span>
               </label>
             </div>
           </H.Pesquisar>

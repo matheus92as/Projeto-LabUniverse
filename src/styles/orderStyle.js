@@ -17,6 +17,10 @@ export const SecondContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 1440px;
+  @media screen and (min-device-width: 320px) and (max-device-width: 650px) {
+    width: 95%;
+    align-items: flex-start;
+  }
 `;
 
 export const Filtro = styled.div`
@@ -78,6 +82,18 @@ export const Filtro = styled.div`
     transform: translateY(0.5rem);
     transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
   }
+
+  @media screen and (min-device-width: 320px) and (max-device-width: 650px) {
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0px 5px;
+    .input {
+      margin: 2.5px 0;
+    }
+    .user-label {
+      transform: translateY(0.7rem);
+    }
+  }
 `;
 
 export const Ordenacao = styled.div`
@@ -94,11 +110,21 @@ export const Ordenacao = styled.div`
     padding: 0.5rem 0.7rem;
     font-size: 1rem;
     color: #f5f5f5;
-    :focus{
+    :focus {
       outline: none;
     }
     * {
-      background-color: rgba(93,92,93,1);
+      background-color: rgba(93, 92, 93, 1);
     }
+  }
+
+  @media screen and (min-device-width: 320px) and (max-device-width: 650px) {
+    display: flex;
+    flex-direction: column;
+    margin: 5px 30px;
+    label{
+      margin: 20px 0;
+    }
+    /* background-color: #f5f5f5; */
   }
 `;

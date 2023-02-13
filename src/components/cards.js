@@ -1,62 +1,67 @@
 import React from "react";
-import styled from "styled-components";
-
-const CardBox = styled.div`
-  background-color: #444444;
-  color: white;
-  width: 200px;
-  height: 450px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 5px 5px 10px black;
-  border-radius: 10px;
-  overflow: hidden;
-  margin: 10px;
-  p {
-    display: flex;
-    text-align: start;
-    padding: 0 15px;
-  }
-  button {
-    margin: 10px;
-    margin-top: 0;
-    padding: 5px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  :hover {
-    .descri {
-      color: #9f40f8;
-    }
-  }
-`;
-const ImagensCard = styled.div`
-  width: 100%;
-  background-image: url(${(props) => props.estampa});
-  background-size: 200px 300px;
-  background-repeat: no-repeat;
-  padding: 0;
-  .img1 {
-    width: 100%;
-    transition: 0.8s;
-    opacity: 100%;
-  }
-  :hover {
-    .img1 {
-      transition: 0.8s;
-      opacity: 0%;
-    }
-  }
-`;
+import {
+  CardBox,
+  ImagensCard,
+  ModalCards,
+  Content,
+  BorderContent,
+} from "../styles/cardsStyle";
 
 class Cards extends React.Component {
-  state = {};
+  state = {
+    showModal: false,
+  };
+
+  onClickEstampa = () => {
+    this.setState({ showModal: true });
+    console.log(this.showModal);
+  };
+
+  clickFora = (event) => {
+    let modal = document.getElementById("modal");
+    if (!modal.contains(event.target)) {
+      this.setState({ showModal: false });
+    }
+  };
 
   render() {
     return (
       <CardBox>
+        {this.state.showModal === true ? (
+          <ModalCards onClick={(e) => this.clickFora(e)}>
+            <BorderContent>
+              <Content id="modal">
+                <button
+                  className="close"
+                  onClick={() => this.setState({ showModal: false })}
+                >
+                  X
+                </button>
+                <ul className="slider">
+                  <li>
+                    <input type="radio" id="slide1" name="slide" defaultChecked />
+                    <label htmlFor="slide1"></label>
+                    <img
+                      src={this.props.fotoProduto}
+                      alt={"Camiseta"}
+                    ></img>
+                  </li>
+                  <li>
+                    <input type="radio" id="slide2" name="slide" />
+                    <label htmlFor="slide2"></label>
+                    <img
+                      src={this.props.fotoEstampa}
+                      alt={"Estampa"}
+                    ></img>
+                  </li>
+                </ul>
+              </Content>
+            </BorderContent>
+          </ModalCards>
+        ) : null}
         <ImagensCard estampa={this.props.fotoEstampa}>
           <img
+            onClick={() => this.onClickEstampa()}
             className="img1"
             src={this.props.fotoProduto}
             alt={"Camiseta"}
@@ -64,9 +69,12 @@ class Cards extends React.Component {
         </ImagensCard>
         <div>
           <p className="descri">{this.props.descricao} </p>
-          <p>R$ {this.props.preco}</p>
+          <p>R$ {this.props.preco},00</p>
         </div>
-        <button onClick={() => this.props.adicionarItem(this.props.id)}>
+        <button
+          className="addItem"
+          onClick={() => this.props.adicionarItem(this.props.id)}
+        >
           Adicionar ao carrinho
         </button>
       </CardBox>

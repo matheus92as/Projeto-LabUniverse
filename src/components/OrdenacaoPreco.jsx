@@ -13,27 +13,27 @@ class OrdenacaoPreco extends React.Component {
         <SecondContainer>
           <Filtro>
             <h3>Filtros</h3>
-            <div class="input-group">
+            <div className="input-group">
               <input
                 type="number"
                 value={this.props.precoMin}
                 onChange={this.props.updatePrecoMin}
-                autocomplete="off"
+                autoComplete="off"
                 required
-                class="input"
+                className="input"
               />
-              <label class="user-label">Valor Min</label>
+              <label className="user-label">Valor Min</label>
             </div>
-            <div class="input-group">
+            <div className="input-group">
               <input
                 type="number"
                 value={this.props.precoMax}
                 onChange={this.props.updatePrecoMax}
-                autocomplete="off"
-                class="input"
+                autoComplete="off"
+                className="input"
                 required
               />
-              <label class="user-label">Valor Máx</label>
+              <label className="user-label">Valor Máx</label>
             </div>
           </Filtro>
           <Ordenacao>

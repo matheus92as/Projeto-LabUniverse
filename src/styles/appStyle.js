@@ -25,6 +25,9 @@ export const CardContainer = styled.div`
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  @media screen and (min-device-width: 320px) and (max-device-width: 500px){
+    width: fit-content;
+  }
 `;
 
 export const Footer = styled.div`

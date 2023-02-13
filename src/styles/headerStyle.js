@@ -15,6 +15,9 @@ export const SecondContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 1440px;
+  @media screen and (min-device-width: 320px) and (max-device-width: 650px) {
+    width: 95%;
+  }
 `;
 
 export const Pesquisar = styled.div`
@@ -42,11 +45,11 @@ export const Pesquisar = styled.div`
         background: rgba(233, 230, 234, 0.1);
         border-radius: 5px 5px 0px 0px;
       }
-      :valid{
+      :valid {
         background: rgba(233, 230, 234, 0.1);
         border-radius: 5px 5px 0px 0px;
       }
-      :valid ~ label .label-char{
+      :valid ~ label .label-char {
         transform: translateY(-20px);
         font-size: 14px;
         font-weight: bold;
@@ -131,10 +134,35 @@ export const Pesquisar = styled.div`
       -webkit-transition: 0.2s ease all;
     }
   }
+
+  @media screen and (min-device-width: 380px) and (max-device-width: 650px) {
+    margin-left: 0px;
+    .wave-group {
+      position: relative;
+      .input {
+        width: 100px;
+      }
+    }
+  }
+  @media screen and (min-device-width: 320px) and (max-device-width: 379px){
+    margin-left: 0px;
+    .wave-group {
+      position: relative;
+      .input {
+        width: 75px;
+      }
+    }
+  }
 `;
 
 export const Logo = styled.img`
   width: 100px;
+  @media screen and (min-device-width: 380px) and (max-device-width: 650px) {
+    width: 80px;
+  }
+  @media screen and (min-device-width: 320px) and (max-device-width: 379px){
+    width: 60px;
+  }
 `;
 
 export const LoginCarrinho = styled.div`
@@ -163,6 +191,16 @@ export const LoginCarrinho = styled.div`
     background-color: inherit;
     border: none;
     cursor: pointer;
+  }
+  @media screen and (min-device-width: 320px) and (max-device-width: 650px){
+    width: fit-content;
+    margin-right: 0px;
+    #account{
+      padding: 5px;
+      img {
+      margin-right: 0px;
+    }
+    }
   }
 `;
 
@@ -208,5 +246,8 @@ export const Login = styled.div`
       transition: 0.8s;
       opacity: 1;
     }
+  }
+  @media screen and (min-device-width: 320px) and (max-device-width: 650px) {
+    display: none;
   }
 `;

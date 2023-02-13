@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "./components/Header";
 import Carrinho from "./components/Carrinho";
-// import Filtros from "./components/Filtros";
 import Cards from "./components/cards";
 import OrdenacaoPreco from "./components/OrdenacaoPreco";
 import { MainContainer, Main, CardContainer, Footer } from "./styles/appStyle";
@@ -20,7 +19,6 @@ class App extends React.Component {
 
   onClickCarrinho = () => {
     this.setState({ carrinhoHeader: !this.state.carrinhoHeader });
-    // console.log(this.state.carrinhoHeader)
   };
 
   updatePrecoMin = (dig) => {
@@ -85,8 +83,6 @@ class App extends React.Component {
     this.setState({ listaDeCompras: carrinhoAtt });
   };
 
-  // render(){
-
   updatePesquisar = (dig) => {
     this.setState({ inputPesquisar: dig.target.value });
   };
@@ -121,6 +117,7 @@ class App extends React.Component {
       .map((card) => {
         return (
           <Cards
+            key={card.id}
             id={card.id}
             fotoProduto={card.fotoProduto}
             fotoEstampa={card.fotoEstampa}
@@ -148,12 +145,6 @@ class App extends React.Component {
           updateOrdenacaoPreco={this.updateOrdenacaoPreco}
         />
         <Main>
-          {/* <Filtros
-            precoMin={this.state.precoMin}
-            precoMaxn={this.state.precoMax}
-            updatePrecoMin={this.updatePrecoMin}
-            updatePrecoMax={this.updatePrecoMax}
-          /> */}
           <CardContainer>{listaFiltrada}</CardContainer>
           <Carrinho
             listaDeCompras={this.state.listaDeCompras}
