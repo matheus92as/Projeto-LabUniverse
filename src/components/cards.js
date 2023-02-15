@@ -39,20 +39,19 @@ class Cards extends React.Component {
                 </button>
                 <ul className="slider">
                   <li>
-                    <input type="radio" id="slide1" name="slide" defaultChecked />
+                    <input
+                      type="radio"
+                      id="slide1"
+                      name="slide"
+                      defaultChecked
+                    />
                     <label htmlFor="slide1"></label>
-                    <img
-                      src={this.props.fotoProduto}
-                      alt={"Camiseta"}
-                    ></img>
+                    <img src={this.props.fotoProduto} alt={"Camiseta"}></img>
                   </li>
                   <li>
                     <input type="radio" id="slide2" name="slide" />
                     <label htmlFor="slide2"></label>
-                    <img
-                      src={this.props.fotoEstampa}
-                      alt={"Estampa"}
-                    ></img>
+                    <img src={this.props.fotoEstampa} alt={"Estampa"}></img>
                   </li>
                 </ul>
               </Content>

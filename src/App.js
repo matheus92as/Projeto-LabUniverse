@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./components/Header";
 import Carrinho from "./components/Carrinho";
-import Cards from "./components/cards";
+import Cards from "./components/Cards";
 import OrdenacaoPreco from "./components/OrdenacaoPreco";
 import { MainContainer, Main, CardContainer, Footer } from "./styles/appStyle";
 import cards from "./constants/cards";

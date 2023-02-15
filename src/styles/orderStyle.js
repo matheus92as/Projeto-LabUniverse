@@ -125,6 +125,5 @@ export const Ordenacao = styled.div`
     label{
       margin: 20px 0;
     }
-    /* background-color: #f5f5f5; */
   }
 `;
