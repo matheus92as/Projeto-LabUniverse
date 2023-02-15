@@ -39,8 +39,20 @@ https://projeto-lab-universe.vercel.app
 
 </br>
 
-![lab_universe1](https://user-images.githubusercontent.com/99031516/161470550-5380505d-76de-4f92-afb1-74944d090795.jpg)
+![image](https://user-images.githubusercontent.com/99031516/219129641-4691cf6b-1205-4b13-9692-473c65581aa3.png)
 
-![lab_universe2](https://user-images.githubusercontent.com/99031516/161470554-97b23da7-e276-4137-9ea9-c44da3dba314.jpg)
+![image](https://user-images.githubusercontent.com/99031516/219129738-aed15f68-2e01-40cd-8ce3-7e28693eb565.png)
 
-![lab_universe3](https://user-images.githubusercontent.com/99031516/161470558-74c108e4-3ed6-42ed-85f5-8466929058c1.jpg)
+![image](https://user-images.githubusercontent.com/99031516/219129849-244a1a87-26e6-4e4e-8ca7-dbf8595af29f.png)
+
+</br>
+
+Celular - Dimensões de um iPhone 12 Pro
+
+</br>
+
+![image](https://user-images.githubusercontent.com/99031516/219128679-8ce5fd01-ee92-4072-9bd8-6f9cebaea27b.png)
+
+![image](https://user-images.githubusercontent.com/99031516/219128910-ef505736-c280-408a-a994-2de760483fc1.png)
+
+![image](https://user-images.githubusercontent.com/99031516/219129002-13d7f1d7-2dab-417a-a1f0-595863296b58.png)
