@@ -17,6 +17,14 @@ class App extends React.Component {
     carrinhoHeader: false,
   };
 
+  componentDidUpdate() {
+   
+  };
+
+  componentDidMount() {
+    this.buscaStorage()
+  };
+
   onClickCarrinho = () => {
     this.setState({ carrinhoHeader: !this.state.carrinhoHeader });
   };
@@ -49,6 +57,7 @@ class App extends React.Component {
       });
       this.setState({ carrinhoHeader: true });
       this.setState({ listaDeCompras: novaListaCompras });
+      localStorage.setItem("bag", JSON.stringify(novaListaCompras));
     } else {
       // o segundo caso acontece caso o item não seja repetido
       const produtoEscolhido = this.state.cards.find(
@@ -60,10 +69,11 @@ class App extends React.Component {
         { ...produtoEscolhido, quantia: 1 },
       ];
       // e fazemos uma copia da lista de compra, mas com nosso produto novo e o novo valor de quantia
-      this.setState({ listaDeCompras: novaListaCompras });
       this.setState({ carrinhoHeader: true });
+      this.setState({ listaDeCompras: novaListaCompras });
+      localStorage.setItem("bag", JSON.stringify(novaListaCompras));
     }
-  };
+  }; 
 
   removeItem = (id) => {
     //le a lista de compras atual
@@ -81,6 +91,7 @@ class App extends React.Component {
       .filter((produto) => produto.quantia > 0); //depois disso filtra a lista e só retorna os produtos que não estiverem com quantia zerada
 
     this.setState({ listaDeCompras: carrinhoAtt });
+    localStorage.setItem("bag", JSON.stringify(carrinhoAtt));
   };
 
   updatePesquisar = (dig) => {
@@ -90,6 +101,14 @@ class App extends React.Component {
   updateOrdenacaoPreco = (event) => {
     this.setState({ ordenacaoPreco: event.target.value });
   };
+
+  buscaStorage = () => {
+    const bag = localStorage.getItem('bag');
+    const bagList = JSON.parse(bag);
+    if (bagList !== null){
+      this.setState({ listaDeCompras: bagList });
+    }
+  }
 
   render() {
     const listaFiltrada = this.state.cards

@@ -11,6 +11,9 @@ Este trabalho foi realizado durante o bootcamp da Labenu, e contou com a partici
 
 Alguns meses depois de ter concluádo este bootcamp, realizei algumas revisões no código, acrescentei estilizações e efeitos aos elementos, também modifiquei as estruturas das pastas e arquivos para padronizinar melhor. Nesta nova versão a página está responsiva, ajustada para grandes telas e pequenas, como tablets e celulares.
 
+### OBS:
+ Sei que comentários dentro do código podem atrapalhar a performance, mas este projeto é pequeno por isso não há tanta perda, decidi manter alguns comentários por questões didaticas, assim quem estiver iniciando pode ter mais clareza em enterpretar certas funções do código.
+
 ### O que funciona
 - Card de produto tem animações ao passar o mouse neles, tanto nas estampas quanto no botão.
 - Ao clicar na imagem dos cards, a imagem irá se expandir na tela para melhor visualização. 
@@ -19,6 +22,7 @@ Alguns meses depois de ter concluádo este bootcamp, realizei algumas revisões 
 - Dentro do carrinho podemos ver os itens selecionados, a quantia de cada um e o valor total de compra.
 - É possível remover os itens do carrinho e assim o valor total é recalculado.
 - Os filtros de busca por valor e de pesquisa estão todos funcionando, retornando os itens correspondentes.
+- Os itens postos no carrinho ficam salvos, mesmo atualizando a pagina eles se mantem no carrinho até serem retirados.
 
 ### O que não funciona
 - As opções de login e criar conta no header não tem funcionalidade, são apenas para ilustrar uma possível adição em um projeto mais robusto.
